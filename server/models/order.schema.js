@@ -41,7 +41,7 @@ const orderSchema = mongoose.Schema({
     },
     paymentMode: {
         type: String,
-        enum: ["COD", "UPI", "CREDITCARD", "WALLAT"],
+        enum: ["COD", "UPI", "CREDITCARD", "WALLET"],
     }
 }, {
     timpstamps: true
