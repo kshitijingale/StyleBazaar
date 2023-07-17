@@ -87,3 +87,19 @@ exports.signin = async (req, res) => {
         })
     }
 }
+
+exports.signout = async (req, res) => {
+    try {
+        res.clearCookie('token')
+        res.status(200).json({
+            success: true,
+            message: "User signed out successfully"
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(error.code || 500).json({
+            success: false,
+            message: error.message
+        })
+    }
+}
