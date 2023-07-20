@@ -68,6 +68,7 @@ exports.signin = async (req, res) => {
             return res.status(200).cookie('token', token, cookieOptions).json({
                 success: true,
                 message: "User signed in successfully",
+                token,
                 userInfo: {
                     _id,
                     name,

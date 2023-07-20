@@ -28,7 +28,7 @@ exports.isSignedIn = (req, res, next) => {
 }
 
 exports.isAuthenticated = (req, res, next) => {
-    const checker = req.profile && req.user && req.profile._id === req.user._id
+    const checker = req.profile && req.user && req.profile._id == req.user._id
 
     if (!checker) {
         res.status(403).json({
