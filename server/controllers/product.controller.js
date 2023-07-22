@@ -222,3 +222,44 @@ exports.getProducts = async (req, res) => {
         })
     }
 }
+
+exports.getAllUniqueCategories = async (req, res) => {
+    const category = await Product.distinct('category', {})
+
+    if (!category) {
+        throw new customError("Cannot get categories", 400)
+    }
+
+    res.status(200).json({
+        success: true,
+        category
+    })
+}
+
+exports.updateStock = async (req, res, next) => {
+    try {
+        const myOperations = req.order.products.map(product => {
+            return {
+                updateOne: {
+                    filter: { _id: product._id },
+                    update: { $inc: { stock: -product.count, sold: +product.count } }
+                }
+            }
+        })
+
+        const response = await Product.bulkWrite(myOperations)
+
+        if (!response) {
+            throw new customError('Bulk operation failed', 400)
+        }
+
+        next()
+
+    } catch (error) {
+        console.log(error);
+        res.status(error.code || 500).json({
+            success: false,
+            message: error.message
+        })
+    }
+}
