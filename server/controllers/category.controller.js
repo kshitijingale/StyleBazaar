@@ -21,6 +21,11 @@ exports.getCategoryById = async (req, res, next, id) => {
 
 exports.createCategory = async (req, res) => {
     try {
+        // check if already exists
+        if (await Category.findOne(req.body)) {
+            throw new customError("Category already exists", 400)
+        }
+
         const category = await Category.create(req.body)
 
         if (!category) {

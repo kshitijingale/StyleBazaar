@@ -4,7 +4,6 @@ const customError = require('../utils/customError')
 
 exports.isSignedIn = (req, res, next) => {
     try {
-
         const token = req.cookies.token || req.headers.authorization.split(" ")[1]
 
         // Check if token doesn't exist

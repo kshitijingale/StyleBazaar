@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Base from '../core/Base'
 import { authenticate, isAuthenticated, signIn } from '../auth/helper'
-import { redirect } from 'react-router-dom'
-redirect()
+import { useNavigate } from 'react-router-dom'
 
 const Signin = () => {
     const [values, setValues] = useState({
@@ -12,6 +11,8 @@ const Signin = () => {
         loading: false,
         didRedirect: false
     })
+
+    const navigate = useNavigate()
 
     const { email, password, error, loading, didRedirect } = values
 
@@ -48,13 +49,13 @@ const Signin = () => {
     const performRedirect = () => {
         if (didRedirect) {
             if (userInfo && userInfo.role === "ADMIN") {
-                return <p>redirect to admin dashboard</p>
+                return navigate("/admin/dashboard")
             } else {
-                return <p>redirect to user dashboard</p>
+                return navigate("/user/dashboard")
             }
         }
         if (isAuthenticated()) {
-            redirect("/")
+            navigate('/')
         }
     }
 

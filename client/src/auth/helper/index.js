@@ -36,7 +36,7 @@ export const authenticate = (data, next) => {
     }
 }
 
-export const signout = () => {
+export const signout = (next) => {
     if (typeof (window) !== "undefined") {
         localStorage.removeItem("jwt")
 
@@ -44,6 +44,7 @@ export const signout = () => {
             .then(response => console.log("Signout successful"))
             .catch(err => console.log(err))
     }
+    next()
 }
 
 export const isAuthenticated = () => {
