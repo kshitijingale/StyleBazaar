@@ -6,6 +6,11 @@ import Signin from './user/Signin'
 import UserDashboard from './user/UserDashboard'
 import AdminDashboard from './user/AdminDashboard'
 import AddCategory from './admin/AddCategory'
+import ManageCategory from './admin/ManageCategory'
+import AddProduct from './admin/AddProduct'
+import ManageProduct from './admin/ManageProducts'
+import UpdateProduct from './admin/UpdateProduct'
+import Cart from './core/Cart'
 
 const Paths = () => {
     return (
@@ -17,6 +22,11 @@ const Paths = () => {
                 <Route path='/user/dashboard' element={<UserDashboard />} />
                 <Route path='/admin/dashboard' element={<AdminDashboard />} />
                 <Route path='/admin/create/category' element={<AddCategory />} />
+                <Route path='/admin/categories' element={<ManageCategory />} />
+                <Route path='/admin/create/product' element={<AddProduct />} />
+                <Route path='/admin/products' element={<ManageProduct />} />
+                <Route path='/admin/product/update/:productId' element={<UpdateProduct />} />
+                <Route path='/cart' element={<Cart />} />
             </Routes>
         </BrowserRouter>
     )

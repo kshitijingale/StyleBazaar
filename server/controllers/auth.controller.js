@@ -58,7 +58,7 @@ exports.signin = async (req, res) => {
         if (await user.comparePassword(password)) {
             const { _id, name, role } = user
 
-            const token = await JWT.sign({ _id, email }, config.JWT_SECRET, { expiresIn: '2h' })
+            const token = await JWT.sign({ _id, email }, config.JWT_SECRET, { expiresIn: '24h' })
 
             const cookieOptions = {
                 expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
