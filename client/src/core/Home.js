@@ -23,7 +23,7 @@ const Home = () => {
     }, []);
 
     return (
-        <Base title='ShopBazaar' description='Online Store'>
+        <Base title='StyleBazaar' description='Online Store'>
             <div className='row'>
                 {products.map((product, index) => {
                     return (
