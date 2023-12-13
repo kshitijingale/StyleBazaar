@@ -46,7 +46,7 @@ const Card = ({ product, addtoCart = true, removeFromCart = false, setReload = f
     }
 
     return (
-        <div className="card text-white bg-dark border border-info text-center">
+        <div className="card text-[#000] bg-[#fff] border border-info text-center">
             <div className="card-header lead">{product.name}</div>
             <div className="card-body">
                 {getRedirected(redirect)}

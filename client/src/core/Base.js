@@ -1,28 +1,20 @@
 import React from 'react'
 import Menu from './Menu'
+import Footer from './Footer'
 
 const Base = ({
-    title = "My Title",
-    description = "My Description",
-    className = "bg-dark text-white p-4",
+    className = "bg-[#fff] text-[#000]",
     children
 }) => {
     return (
-        <div>
+        <div className='max-w-[1560px] mx-auto overflow-x-hidden'>
             <Menu />
-            <div className='container-fluid mt-5'>
-                <div className='jumbotron bg-dark text-white text-center'>
-                    <h1 className='display-4'>{title}</h1>
-                    <p className='lead'>{description}</p>
-                </div>
-                <div className={className} > {children}</div>
-            </div>
-            <footer className='bg-dark mt-auto footer'>
-                <div className='container-fluid bg-success text-white text-center py-3'>
-                    <h4>If you have any questions, feel free to reach out!</h4>
-                    <button className='btn btn-warning btn-lg'>Contact us</button>
-                </div>
-            </footer>
+
+            <div className={className} > {children}</div>
+
+
+
+            <Footer />
         </div>
     )
 }

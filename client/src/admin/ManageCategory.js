@@ -32,12 +32,12 @@ const ManageCategory = () => {
                 </Link>
                 <div className="row">
                     <div className="col-12">
-                        <h2 className="text-center text-white my-3">Total {categories.length} categories</h2>
+                        <h2 className="text-center text-[#000] my-3">Total {categories.length} categories</h2>
                         {categories && categories.map((category, index) => {
                             return (
                                 <div key={category._id} className="row text-center mb-2 ">
                                     <div className="col-4">
-                                        <h3 className="text-white text-left">{category.name}</h3>
+                                        <h3 className="text-[#000] text-left">{category.name}</h3>
                                     </div>
                                     <div className="col-4">
                                         <Link

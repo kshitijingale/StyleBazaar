@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .btn,
 .jumbotron,
 .nav :hover {
@@ -5,7 +9,7 @@
 }
 
 body {
-  background: #212529;
+  background: #fff;
 }
 
 footer div {

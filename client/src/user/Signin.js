@@ -82,14 +82,14 @@ const Signin = () => {
     const signInForm = () => {
         return (
             <div className='row'>
-                <div className='col-md-6 offset-sm-3 text-left'>
+                <div className='col-md-6 offset-sm-3 text-left mt-[200px]'>
                     <form>
                         <div className='form-group mb-2'>
-                            <label className='text-light'>Email</label>
+                            <label className='text-[#000]'>Email</label>
                             <input onChange={handleChange("email")} value={email} type='email' className='form-control' />
                         </div>
                         <div className='form-group mb-2'>
-                            <label className='text-light'>Password</label>
+                            <label className='text-[#000]'>Password</label>
                             <input onChange={handleChange("password")} value={password} type='password' className='form-control' />
                         </div>
                         <button onClick={onSubmit} className='btn btn-success w-100 mt-2'>Sign In</button>

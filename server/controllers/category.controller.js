@@ -65,14 +65,18 @@ exports.getCategory = (req, res) => {
 exports.getCategories = async (req, res) => {
     try {
         const categories = await Category.find()
-
+        const names = [];
         if (!categories) {
             throw new customError('Not able get categories', 400)
         }
 
+        categories.map((category) => {
+            names.push(category.name);
+        })
+
         res.status(200).json({
             success: true,
-            categories
+            names
         })
 
     } catch (error) {
