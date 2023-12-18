@@ -30,8 +30,8 @@ const UpdateProduct = () => {
         price,
         stock,
         categories,
-        category,
-        loading,
+        // category,
+        // loading,
         error,
         updatedProduct,
         getaRedirect,
@@ -72,7 +72,7 @@ const UpdateProduct = () => {
 
     useEffect(() => {
         preload(productId);
-    }, []);
+    });
 
     //TODO: work on it
     const onSubmit = event => {
@@ -209,19 +209,20 @@ const UpdateProduct = () => {
     return (
         isAuthenticated() && isAuthenticated().userInfo.role === "ADMIN" ? (
             <Base
-                title="Add product"
-                description="Add a new product for StyleBazaar"
                 className="container bg-info p-4"
             >
-                <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
-                    Admin Home
-                </Link>
-                <div className="row bg-white rounded">
-                    <div className="col-md-8 offset-md-2">
-                        {redirectToPanel()}
-                        {successMessage()}
-                        {errorMessage()}
-                        {updateProductForm()}
+                <div className='flex flex-col h-[90vh] justify-center px-3 sm:px-0'>
+
+                    <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
+                        Admin Home
+                    </Link>
+                    <div className="row bg-white rounded">
+                        <div className="col-md-8 offset-md-2">
+                            {redirectToPanel()}
+                            {successMessage()}
+                            {errorMessage()}
+                            {updateProductForm()}
+                        </div>
                     </div>
                 </div>
             </Base>

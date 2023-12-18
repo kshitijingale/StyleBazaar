@@ -4,8 +4,6 @@ const customError = require('../utils/customError')
 
 exports.getUserById = async (req, res, next, id) => {
     try {
-
-
         const user = await User.findById(id)
 
         // if user not found

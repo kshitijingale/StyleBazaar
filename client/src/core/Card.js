@@ -1,66 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import ImageHelper from "./helper/ImageHelper";
-import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
-import { Navigate } from "react-router-dom";
 
-const Card = ({ product, addtoCart = true, removeFromCart = false, setReload = f => f, reload }) => {
-    const [redirect, setRedirect] = useState(false)
+import { Link } from "react-router-dom";
 
-    const addToCart = () => {
-        addItemToCart(product, () => { setRedirect(true) })
-    }
-
-    const showAddToCart = addtoCart => {
-        return (
-            addtoCart && (
-                <button
-                    onClick={addToCart}
-                    className="btn btn-block btn-outline-success mt-2 mb-2"
-                >
-                    Add to Cart
-                </button>
-            )
-        );
-    };
-
-    const showRemoveFromCart = removeFromCart => {
-        return (
-            removeFromCart && (
-                <button
-                    onClick={() => {
-                        removeItemFromCart(product._id)
-                        setReload(!reload)
-                    }}
-                    className="btn btn-block btn-outline-danger mt-2 mb-2"
-                >
-                    Remove from cart
-                </button>
-            )
-        );
-    };
-
-    const getRedirected = (redirect) => {
-        if (redirect) {
-            return <Navigate to='/cart' />
-        }
-    }
-
+const Card = ({ product }) => {
     return (
-        <div className="card text-[#000] bg-[#fff] border border-info text-center">
-            <div className="card-header lead">{product.name}</div>
-            <div className="card-body">
-                {getRedirected(redirect)}
-                <ImageHelper product={product} />
-                <p className="lead bg-success font-weight-normal text-wrap">
-                    {product.description}
-                </p>
-                <p className="btn btn-success rounded  btn-sm px-4">₹{product.price}</p>
-                <div className="row">
-                    <div className="col-12">{showAddToCart(addtoCart)}</div>
-                    <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <Link to={`/product/${product._id}`} className="block relative rounded overflow-hidden cursor-pointer">
+                <ImageHelper classes="object-cover object-center w-full h-full block" product={product} />
+                <div className="mt-4">
+                    <h2 className="text-gray-900 title-font text-lg font-medium">{product.name}</h2>
+                    <p className="mt-1">₹{product.price}</p>
                 </div>
-            </div>
+            </Link>
         </div>
+
     );
 };
 

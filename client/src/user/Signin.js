@@ -82,28 +82,31 @@ const Signin = () => {
     const signInForm = () => {
         return (
             <div className='row'>
-                <div className='col-md-6 offset-sm-3 text-left mt-[200px]'>
+                <div className='col-md-6 offset-sm-3 text-left'>
                     <form>
                         <div className='form-group mb-2'>
-                            <label className='text-[#000]'>Email</label>
+                            <label className=''>Email</label>
                             <input onChange={handleChange("email")} value={email} type='email' className='form-control' />
                         </div>
                         <div className='form-group mb-2'>
-                            <label className='text-[#000]'>Password</label>
+                            <label className=''>Password</label>
                             <input onChange={handleChange("password")} value={password} type='password' className='form-control' />
                         </div>
-                        <button onClick={onSubmit} className='btn btn-success w-100 mt-2'>Sign In</button>
+                        <button onClick={onSubmit} className='btn w-full btn-dark mt-2'>Sign In</button>
                     </form>
                 </div >
             </div >
         )
     }
     return (
-        <Base title='Sign In Page' description='A page for user to sign in!'>
-            {loadingMessage()}
-            {errorMessage()}
-            {signInForm()}
-            {performRedirect()}
+        <Base>
+            <div className='flex flex-col h-[90vh] justify-center px-3 sm:px-0'>
+                <h2 className="text-2xl font-bold mb-10 text-center">Sign in to StyleBazaar !!!</h2>
+                {loadingMessage()}
+                {errorMessage()}
+                {signInForm()}
+                {performRedirect()}
+            </div>
         </Base>
     )
 }

@@ -125,6 +125,23 @@ exports.getProduct = (req, res) => {
     }
 }
 
+exports.getProductsByCategory = async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId;
+        const products = await Product.find({ category: categoryId });
+        res.status(200).json({
+            success: true,
+            products
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(error.code || 500).json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
 exports.photo = (req, res, next) => {
     try {
         if (req.product.photo.data) {

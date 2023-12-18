@@ -66,13 +66,13 @@ const AdminDashboard = () => {
     return (
         isAuthenticated() && isAuthenticated().userInfo.role === "ADMIN" ? (
             <Base
-                title="Welcome to admin area"
-                description="Manage all of your products here"
-                className="container bg-success p-4"
+                className="container p-4"
             >
-                <div className="row">
-                    <div className="col-3">{adminLeftSide()}</div>
-                    <div className="col-9">{adminRightSide()}</div>
+                <div className='flex flex-col h-[90vh] justify-center px-3 sm:px-0'>
+                    <div className="row">
+                        <div className="col-3">{adminLeftSide()}</div>
+                        <div className="col-9">{adminRightSide()}</div>
+                    </div>
                 </div>
             </Base>
         ) : (

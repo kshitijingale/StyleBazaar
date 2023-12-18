@@ -7,8 +7,8 @@ const UserDashboard = () => {
 
     return (
         isAuthenticated() ? (
-            <Base title='This is User dashboard'>
-            </Base>
+            <Navigate to="/" />
+
         ) : (
             <Navigate to="/signin" />
         )

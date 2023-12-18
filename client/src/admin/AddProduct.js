@@ -73,9 +73,11 @@ const AddProduct = () => {
     };
 
     const handleChange = name => event => {
-        const value = name === "photo" ? event.target.files[0] : event.target.value
-        formData.set(name, value)
-        setValues({ ...values, [name]: value })
+        const value = name === "photo" ? event.target.files[0] : event.target.value;
+        formData.set(name, value);
+        if (name !== "photo") {
+            setValues({ ...values, [name]: value });
+        }
     };
 
     const successMessage = () => (
@@ -181,15 +183,17 @@ const AddProduct = () => {
                 description="Add a new product for StyleBazaar"
                 className="container bg-info p-4"
             >
-                <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
-                    Admin Home
-                </Link>
-                <div className="row bg-white rounded">
-                    <div className="col-md-8 offset-md-2">
-                        {successMessage()}
-                        {errorMessage()}
-                        {redirectToPanel()}
-                        {createProductForm()}
+                <div className='flex flex-col h-[90vh] justify-center px-3 sm:px-0'>
+                    <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
+                        Admin Home
+                    </Link>
+                    <div className="row bg-white rounded">
+                        <div className="col-md-8 offset-md-2">
+                            {successMessage()}
+                            {errorMessage()}
+                            {redirectToPanel()}
+                            {createProductForm()}
+                        </div>
                     </div>
                 </div>
             </Base>

@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { isAuthenticated, signout } from '../auth/helper'
 import logo from '../assets/images/logo1.png'
 
-
 const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -23,7 +22,7 @@ const Menu = () => {
                 <div className='flex flex-col-reverse lg:flex-row gap-3 lg:gap-10'>
                     <ul className={`lg:flex ${isOpen ? 'flex flex-col gap-2' : 'hidden'} justify-center gap-10`}>
                         <li>
-                            <Link className='text-[#000] hover:text-gray-300' to="/">Categories</Link>
+                            <Link className='text-[#000] hover:text-gray-300' to="/">Home</Link>
                         </li>
                         {isAuthenticated() && isAuthenticated().userInfo.role === "USER" && (
                             <li className='nav-item'>
@@ -37,10 +36,10 @@ const Menu = () => {
                             </li>
                         )}
                         <li>
-                            <a href="#" className="text-[#000] hover:text-gray-300">About</a>
+                            <a href="/" className="text-[#000] hover:text-gray-300">About</a>
                         </li>
                         <li>
-                            <a href="#" className="text-[#000] hover:text-gray-300">Developer</a>
+                            <a href="/" className="text-[#000] hover:text-gray-300">Developer</a>
                         </li>
                         {
                             !isAuthenticated() && (<>

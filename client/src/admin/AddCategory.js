@@ -81,12 +81,14 @@ const AddCategory = () => {
                 description="Add a new category for new tshirts"
                 className="container bg-info p-4"
             >
-                <div className="row bg-white rounded">
-                    <div className="col-md-8 offset-md-2">
-                        {successMessage()}
-                        {warningMessage()}
-                        {myCategoryForm()}
-                        {goBack()}
+                <div className='flex flex-col h-[90vh] justify-center px-3 sm:px-0'>
+                    <div className="row bg-white rounded">
+                        <div className="col-md-8 offset-md-2">
+                            {successMessage()}
+                            {warningMessage()}
+                            {myCategoryForm()}
+                            {goBack()}
+                        </div>
                     </div>
                 </div>
             </Base>

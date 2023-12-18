@@ -30,20 +30,23 @@ const Cart = () => {
             </div>
         );
     };
-    const loadCheckout = () => {
-        return (
-            <div>
-                <h2>This section for checkout</h2>
-            </div>
-        );
-    };
+    // const loadCheckout = () => {
+    //     return (
+    //         <div>
+    //             <h2>This section for checkout</h2>
+    //         </div>
+    //     );
+    // };
 
     return (
         <Base title="Cart Page" description="Ready to checkout">
-            <div className="row text-center">
-                <div className="col-6">{(products.length > 0 ? loadAllProducts() : (<h1>No products in the cart</h1>))}</div>
-                <div className="col-6">
-                    <Payment products={products} setReload={setReload} />
+            <div className='flex flex-col min-h-[90vh] justify-center px-3 sm:px-0'>
+
+                <div className="row text-center">
+                    <div className="col-6">{(products.length > 0 ? loadAllProducts() : (<h1>No products in the cart</h1>))}</div>
+                    <div className="col-6">
+                        <Payment products={products} setReload={setReload} />
+                    </div>
                 </div>
             </div>
         </Base>

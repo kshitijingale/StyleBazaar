@@ -11,6 +11,8 @@ import AddProduct from './admin/AddProduct'
 import ManageProduct from './admin/ManageProducts'
 import UpdateProduct from './admin/UpdateProduct'
 import Cart from './core/Cart'
+import ProductsByCategory from './core/ProductsByCategory'
+import Product from './core/Product'
 
 const Paths = () => {
     return (
@@ -26,6 +28,8 @@ const Paths = () => {
                 <Route path='/admin/create/product' element={<AddProduct />} />
                 <Route path='/admin/products' element={<ManageProduct />} />
                 <Route path='/admin/product/update/:productId' element={<UpdateProduct />} />
+                <Route path='/products/:categoryId' element={<ProductsByCategory />} />
+                <Route path='/product/:productId' element={<Product />} />
                 <Route path='/cart' element={<Cart />} />
             </Routes>
         </BrowserRouter>
