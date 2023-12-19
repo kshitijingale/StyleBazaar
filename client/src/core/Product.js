@@ -51,6 +51,9 @@ const Product = () => {
 
     const checkInCart = () => {
         const cartItems = loadCart();
+        if (!cartItems) {
+            return false;
+        }
         const doesExist = cartItems.some((item) => item._id === product._id)
         return doesExist;
     }

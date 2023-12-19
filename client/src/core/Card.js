@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
     return (
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full ">
             <Link to={`/product/${product._id}`} className="block relative rounded overflow-hidden cursor-pointer">
                 <ImageHelper classes="object-cover object-center w-full h-full block" product={product} />
                 <div className="mt-4">

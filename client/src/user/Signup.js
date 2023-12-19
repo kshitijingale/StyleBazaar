@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Base from '../core/Base'
 import { signUp } from '../auth/helper'
 import { Link } from 'react-router-dom'
-
 const Signup = () => {
     const [values, setValues] = useState({
         name: "",
@@ -85,6 +84,11 @@ const Signup = () => {
                         </div>
                         <button onClick={onSubmit} className='btn btn-dark w-100 mt-2'>Sign Up</button>
                     </form>
+                    <p className='mt-2'>Already have an account {
+                        <Link to={"/signin"}>
+                            <button className='text-blue-400 hover:text-blue-500'>Sign in</button>
+                        </Link>
+                    }</p>
                 </div >
             </div >
         )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Base from '../core/Base'
 import { authenticate, isAuthenticated, signIn } from '../auth/helper'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Signin = () => {
     const [values, setValues] = useState({
@@ -94,6 +94,11 @@ const Signin = () => {
                         </div>
                         <button onClick={onSubmit} className='btn w-full btn-dark mt-2'>Sign In</button>
                     </form>
+                    <p className='mt-2'>Don't have an account {
+                        <Link to={"/signup"}>
+                            <button className='text-blue-400 hover:text-blue-500'>Sign up</button>
+                        </Link>
+                    }</p>
                 </div >
             </div >
         )

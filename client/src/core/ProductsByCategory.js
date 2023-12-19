@@ -26,18 +26,27 @@ const ProductsByCategory = () => {
         <Base>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap -m-4">
+                    <div className="flex flex-wrap m-4">
                         {
-                            products.map((product, index) => {
-                                return (
-                                    <Card key={index} product={product} />
-                                )
-                            })
+                            products.length > 0 ? (
+                                <>
+                                    {
+                                        products.map((product, index) => {
+                                            return (
+                                                <Card key={index} product={product} />
+                                            )
+                                        })
+                                    }
+                                </>
+                            ) : (
+                                <div className='h-screen w-screen flex justify-center items-start'>
+                                    <h1 className='text-center font-bold text-2xl text-black'> Products not available for this category !!!</h1>
+                                </div>
+                            )
                         }
                     </div>
                 </div>
             </section>
-
         </Base>
     )
 }
