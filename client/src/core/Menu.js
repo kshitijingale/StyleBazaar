@@ -24,11 +24,11 @@ const Menu = () => {
                         <li>
                             <Link className='text-[#000] hover:text-gray-300' to="/">Home</Link>
                         </li>
-                        {isAuthenticated() && isAuthenticated().userInfo.role === "USER" && (
+                        {/* {isAuthenticated() && isAuthenticated().userInfo.role === "USER" && (
                             <li className='nav-item'>
                                 <Link className='text-[#000] hover:text-gray-300' to="/user/dashboard">Dashboard</Link>
                             </li>
-                        )}
+                        )} */}
 
                         {isAuthenticated() && isAuthenticated().userInfo.role === "ADMIN" && (
                             <li className='nav-item'>
