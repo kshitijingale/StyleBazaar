@@ -28,6 +28,7 @@ const ManageProduct = () => {
             if (!response.data.success) {
                 console.log(response.data.message);
             } else {
+                console.log(response)
                 preload();
             }
         });
@@ -36,8 +37,8 @@ const ManageProduct = () => {
     return (
         isAuthenticated() && isAuthenticated().userInfo.role === "ADMIN" ? (
             <Base title="Welcome admin" description="Manage products here">
-                <div className='flex flex-col h-[90vh] justify-center px-3 sm:px-0'>
-                    <h2 className="mb-4">All products:</h2>
+                <div className='flex flex-col min-h-[90vh] justify-center px-3 sm:px-0'>
+                    <h2 className="my-4">All products:</h2>
                     <Link className="btn btn-info" to={`/admin/dashboard`}>
                         <span className="">Admin Home</span>
                     </Link>

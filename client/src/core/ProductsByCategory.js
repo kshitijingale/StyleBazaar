@@ -39,8 +39,8 @@ const ProductsByCategory = () => {
                                     }
                                 </>
                             ) : (
-                                <div className='h-screen w-screen flex justify-center items-start'>
-                                    <h1 className='text-center font-bold text-2xl text-black'> Products not available for this category !!!</h1>
+                                <div className='h-screen w-screen flex justify-center items-center'>
+                                    <h1 className='text-center font-bold text-2xl text-black'>Loading..... </h1>
                                 </div>
                             )
                         }

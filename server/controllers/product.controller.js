@@ -243,11 +243,11 @@ exports.updateProduct = async (req, res) => {
 }
 
 exports.getProducts = async (req, res) => {
-    let limit = req.query.limit ? parseInt(req.query.limit) : 8;
+    // let limit = req.query.limit ? parseInt(req.query.limit) : 8;
     let sortBy = req.query.sortBy ? (req.query.sortBy) : "_id";
 
     try {
-        const products = await Product.find().select("-photo").limit(limit).sort([[sortBy, 'asc']]).populate("category")
+        const products = await Product.find().select("-photo").sort([[sortBy, 'asc']]).populate("category")
 
         if (!products) {
             throw new customError("Unable to get products", 400)
