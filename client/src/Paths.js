@@ -8,7 +8,7 @@ import ManageCategory from './admin/ManageCategory'
 import AddProduct from './admin/AddProduct'
 import ManageProduct from './admin/ManageProducts'
 import UpdateProduct from './admin/UpdateProduct'
-// import AdminDashboard from './user/AdminDashboard'
+import AdminDashboard from './user/AdminDashboard'
 import Cart from './core/Cart'
 import ProductsByCategory from './core/ProductsByCategory'
 import Product from './core/Product'
@@ -20,7 +20,7 @@ const Paths = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/signin' element={<Signin />} />
-                {/* <Route path='/admin/dashboard' element={<AdminDashboard />} /> */}
+                <Route path='/admin/dashboard' element={<AdminDashboard />} />
                 <Route path='/admin/create/category' element={<AddCategory />} />
                 <Route path='/admin/categories' element={<ManageCategory />} />
                 <Route path='/admin/create/product' element={<AddProduct />} />

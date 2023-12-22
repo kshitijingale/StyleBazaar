@@ -18,7 +18,7 @@ require('./config/db').connect();
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors());
+app.use(cors({ credentials: true, origin: ['https://style-bazaar.netlify.app', 'http://localhost:3000'] }));
 app.use(cookieParser())
 
 
