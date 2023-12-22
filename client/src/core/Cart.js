@@ -44,7 +44,7 @@ const Cart = () => {
             <div className='flex flex-col min-h-[90vh] justify-center px-3 sm:px-0'>
                 <div className="container mx-auto px-2 sm:px-4 pt-20 flex flex-col md:flex-row">
                     <div className="w-full md:w-2/3 sm:p-4">
-                        {(products.length > 0 ? (
+                        {products.length > 0 ? (
                             <>
                                 {products.map(item => (
                                     <div key={item._id} className="flex flex-col sm:flex-row justify-between items-center mb-4  p-2 rounded-md bg-gray-100">
@@ -71,7 +71,7 @@ const Cart = () => {
                                     </div>
                                 ))}
                             </>
-                        ) : (<h1 className="text-center text-2xl font-bold bg-gray-100 py-4">No products in the cart</h1>))}
+                        ) : (<h1 className="text-center text-2xl font-bold bg-gray-100 py-4">No products in the cart</h1>)}
                     </div>
 
                     <div className="md:w-1/3 bg-gray-100 p-4 rounded-md">
