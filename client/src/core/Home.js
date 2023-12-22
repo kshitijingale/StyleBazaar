@@ -7,12 +7,10 @@ import CategoriesCarousel from './CategoriesCarousel';
 
 const Home = () => {
     const [categories, setCategories] = useState([]);
-    // const [error, setError] = useState(false);
 
     const loadAllCategories = () => {
         getCategories().then(response => {
             if (!response.data.success) {
-                // setError(response.data.message);
                 console.log(response.data.message);
             } else {
                 setCategories(response.data.categories)
@@ -23,7 +21,6 @@ const Home = () => {
     }
 
     useEffect(() => {
-        // loadAllProduct();
         loadAllCategories();
     }, []);
 
