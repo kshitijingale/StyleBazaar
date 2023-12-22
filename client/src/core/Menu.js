@@ -62,6 +62,7 @@ const Menu = () => {
                                 <li>
                                     <button className='text-[#000] hover:text-gray-300' onClick={() => {
                                         signout(() => {
+                                            alert('User signed out successfully')
                                             navigate("/")
                                         })
                                     }}>Signout</button>

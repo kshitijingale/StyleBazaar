@@ -49,9 +49,11 @@ const Signin = () => {
     const performRedirect = () => {
         if (didRedirect) {
             if (userInfo && userInfo.role === "ADMIN") {
+                alert("User signed in successfully")
                 return navigate("/admin/dashboard")
             } else {
-                return navigate("/user/dashboard")
+                alert("User signed in successfully")
+                return navigate("/")
             }
         }
         if (isAuthenticated()) {
