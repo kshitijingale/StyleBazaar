@@ -7,7 +7,7 @@ const { getProductById, createProduct, getProduct, photo, updateProduct, getProd
 const { isSignedIn, isAuthenticated, isAdmin } = require('../middlewares/auth')
 
 router.param("userId", getUserById)
-// router.param("categoryId", getCategoryById)
+router.param("categoryId", getCategoryById)
 router.param("productId", getProductById)
 
 router.post('/product/create/:userId', isSignedIn, isAuthenticated, isAdmin, createProduct)
