@@ -1,7 +1,7 @@
 export const addItemToCart = (item, next) => {
     let cart = []
+    item.count = 1;
     if (localStorage.getItem('cart')) {
-        item.count = 1;
         cart = JSON.parse(localStorage.getItem('cart'))
     }
     cart.push(item)
@@ -23,9 +23,11 @@ export const removeItemFromCart = (productId) => {
 }
 
 export const loadCart = () => {
+    let cart = []
     if (localStorage.getItem('cart')) {
         return JSON.parse(localStorage.getItem('cart'))
     }
+    return cart;
 }
 
 export const updateCart = (updatedItems) => {

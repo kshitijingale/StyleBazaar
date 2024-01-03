@@ -10,6 +10,7 @@ const Home = () => {
 
     const loadAllCategories = () => {
         getCategories().then(response => {
+            console.log(response.data);
             if (!response.data.success) {
                 console.log(response.data.message);
             } else {
